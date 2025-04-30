@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@400;700&display=swap');
+
+body {
+  font-family: 'Playfair Display', serif;
+  background: #fef6f89d;
+  /* background: black; */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.card-container {
+  position: relative;
+  width: 600px;
+  height: 750px;
+  perspective: 1500px;
+  margin: 20px;
+}
+
+.card-panel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  display: none;
+  transform: scale(0.95);
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
+/* Set background images for each panel */
+.card-content1 {
+  height: 100%;
+  background-image: url('bday.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.card-content2 {
+  height: 100%;
+  background-image: url('bday3.png');  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.card-content2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.6);
+  z-index: 0;
+}
+
+.card-content2 > * {
+  position: relative;
+  z-index: 1;
+}
+
+.card-content3 {
+  height: 100%;
+  background-image: url('bday2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  opacity: 1;
+}
+
+.card-content3::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background: rgba(255, 255, 255, 0.4); */
+  z-index: 0;
+}
+
+.card-content4 {
+  height: 100%;
+  background-image: url('bday1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.card-content4::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 0;
+}
+
+.card-content4 > * {
+  position: relative;
+  z-index: 1;
+}
+
+.card-panel.show {
+  display: block;
+  opacity: 1;
+  transform: scale(1);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+h1, h2 {
+  margin: 0 0 20px 0;
+  color: #B22222;
+  font-family: 'Dancing Script', cursive;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 60px;
+  position: relative;
+  z-index: 1;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+p {
+  margin: 15px 0;
+  font-size: 22px;
+  font-weight: 500;
+  color: #6e4a3d;
+  font-family: 'Playfair Display', serif;
+  line-height: 1.6;
+}
+
+.message-text {
+  font-size: 32px;
+  color: #7d5242;
+  font-family: 'Dancing Script', cursive;
+  font-weight: bold;
+position: absolute;
+top: 10px;
+left: 40%;
+transform: translateX(-50%);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+button {
+  margin-top: 30px;
+  padding: 14px 28px;
+  background: linear-gradient(to right, #6e4a3d,#895c4c);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Dancing Script', cursive;
+  box-shadow: 0 5px 15px #6d473a81;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(45deg);
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px  #bc7a64a5;
+}
+
+button:hover::after {
+  animation: shine 1.5s;
+}
+
+@keyframes shine {
+  0% { opacity: 0; transform: rotate(45deg) translateX(-100%); }
+  50% { opacity: 0.7; }
+  100% { opacity: 0; transform: rotate(45deg) translateX(100%); }
+}
+
+/* Decorative elements */
+.confetti {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  pointer-events: none;
+  z-index: 10;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.heart {
+  position: absolute;
+  font-size: 24px;
+  color: #e75757;
+  animation: floatHeart 3s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes floatHeart {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(10deg);
+  }
+}
