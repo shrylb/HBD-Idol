@@ -5,13 +5,13 @@ An interactive digital birthday card created for a special 24th birthday celebra
 ## Features
 
 - Multi-panel interactive card
-- Beautiful animations and transitions
+- Animations and transitions
 - Personalized birthday message
 - Responsive design
 
 ## How to View
 
-The birthday card is deployed at: [https://[your-username].github.io/Happy-Birthday-Kismet/](https://shrylb.github.io/HBD-Idol/)
+The birthday card is deployed at: (https://shrylb.github.io/HBD-Idol/)
 
 ## Development
 
